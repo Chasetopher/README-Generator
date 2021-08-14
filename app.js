@@ -1,8 +1,27 @@
 const inquirer  = require('inquirer');
+const fs = require('fs');
+
+
 
   
+const promptUserInfo = () => {
+    return inquirer.prompt([
+        //prompt for user to enter their github username and email
+        {
+            type: 'input',
+            name: 'github',
+            message: 'Enter your GitHub Username'
+        },
+        {
+        type: 'input',
+        name: 'email',
+        message: 'Enter your Email Address'
+      },
+    ]);
+};
+
   const promptProjectInfo = projectData => {
-    //if theres no projects array property, create one
+    //if theres no project data array property, create one
     if (!projectData.projects) {
       projectData.projects = [];
     }
@@ -13,25 +32,17 @@ const inquirer  = require('inquirer');
   ========================================
   `);
     return inquirer.prompt([
-      {
-        type: 'input',
-        name: 'github',
-        message: 'Enter your GitHub Username'
-      },
+      //prompt for user to input details and information about their project
       {
         type: 'input',
         name: 'link',
         message: 'Enter the GitHub link to your project.'
       },
+      
       {
         type: 'input',
-        name: 'email',
-        message: 'Enter your Email Address'
-      },
-      {
-          type: 'input',
-          name: 'title',
-          message: 'Enter the name of your project'
+        name: 'title',
+        message: 'Enter the name of your project'
       },
       {
         type: 'input',
@@ -56,3 +67,4 @@ const inquirer  = require('inquirer');
       }
     ]);
   };
+
