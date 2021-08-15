@@ -62,23 +62,33 @@ const questions = [
     
 // TODO: Create a function to write README file
 function writeToFile(fileName, data) {
-  fs.writeFile('./GenerateREADME./README.md', fileName, data), err => {
-    if (err) {
-      console.log(err);
-      return
-    } else {
-      console.log('README successfully generated in the GeneratedREADME folder!');
-    }
-  }
-}
+  return new Promise((resolve, reject) => {
+    fs.writeFile('./dist/README.md', (fileName, data), err => {
+      if (err) {
+        reject(err);
+        return;
+      }
+      resolve({
+        ok: true,
+        message: 'README.md successfully created!'
+      });
+    });
+  });
+};
 
 // TODO: Create a function to initialize app
+
 function init() {
-  return inquirer.prompt(questions)
-  .then((data) => {
-    writeToFile('README.md', generateMarkdown(data))
-  })
-}
+  return new Promise(async (resolve, reject) => {
+    const data = await inquirer.prompt(questions);
+    writeToFile('README.md', generateMarkdown(data));
+    if (err) {
+      reject(err);
+      return;
+    }
+    resolve(data);
+  });
+};
 
 // Function call to initialize app
 init();
