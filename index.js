@@ -3,7 +3,8 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 
-const questions = [
+const questions = () => {
+  return inquirer.prompt([
       //prompt for user to enter their github username and email
       {
         type: 'input',
@@ -57,38 +58,26 @@ const questions = [
         message: 'Select your project License',
         choices: ['No License', 'GPL-3.0', 'MPL-2.0', 'Apache-2.0', 'MIT']
       }
-  ];
+    ]);
+  };
 
-    
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-  return new Promise((resolve, reject) => {
-    fs.writeFile('./dist/README.md', (fileName, data), err => {
-      if (err) {
-        reject(err);
-        return;
-      }
-      resolve({
-        ok: true,
-        message: 'README.md successfully created!'
-      });
-    });
-  });
-};
-
-// TODO: Create a function to initialize app
-
 function init() {
-  return new Promise(async (resolve, reject) => {
-    const data = await inquirer.prompt(questions);
-    writeToFile('README.md', generateMarkdown(data));
-    if (err) {
-      reject(err);
-      return;
-    }
-    resolve(data);
-  });
-};
+  questions()
+    .then(data => {
+      fs.writeFile('./dist/README.md', generateMarkdown(data), err => {
+        if (err) {
+          throw err
+        } else {
+          console.log(`
+          ===============================
+          README.md successfully created!
+          ===============================
+          `)
+        }
+      })
+    })
+}
 
 // Function call to initialize app
 init();
