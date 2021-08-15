@@ -8,38 +8,48 @@ const questions = [
       {
         type: 'input',
         name: 'github',
-        message: 'Enter your GitHub Username'
+        message: 'Enter your GitHub Username: '
       },
       {
         type: 'input',
         name: 'email',
-        message: 'Enter your Email Address'
+        message: 'Enter your Email Address: '
       },
       //prompt for user to input details and information about their project
       {
         type: 'input',
         name: 'link',
-        message: 'Enter the GitHub link to your project.'
+        message: 'Enter the GitHub link to your project: '
       },
       {
         type: 'input',
         name: 'title',
-        message: 'Enter the name of your project'
+        message: 'Enter the name of your project: '
       },
       {
         type: 'input',
         name: 'description',
-        message: 'Provide a description of the project'
+        message: 'Provide a description of the project: '
       },
       {
         type: 'input',
         name: 'instructions',
-        message: 'Provide installation instructions for the project'
+        message: 'Provide installation instructions for the project: '
+      },
+      {
+        type: 'input',
+        name: 'usage',
+        message: 'Provide instructions and examples for use: '
+      },
+      {
+        type: 'input',
+        name: 'contribute',
+        message: 'Enter guidelines for contributions: '
       },
       {
         type: 'input',
         name: 'test',
-        message: 'Provide test instructions for the project'
+        message: 'Provide test instructions for the project: '
       },
       {
         type: 'list',
