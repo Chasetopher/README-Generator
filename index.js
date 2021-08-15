@@ -3,7 +3,8 @@ const fs = require('fs');
 const generateMarkdown = require('./utils/generateMarkdown');
 
 
-const questions = [
+const questions = () => {
+  return inquirer.prompt([
       //prompt for user to enter their github username and email
       {
         type: 'input',
@@ -57,11 +58,12 @@ const questions = [
         message: 'Select your project License',
         choices: ['No License', 'GPL-3.0', 'MPL-2.0', 'Apache-2.0', 'MIT']
       }
-    ];
+    ]);
+};
 
 // TODO: Create a function to write README file
 function init() {
-  return inquirer.prompt(questions)
+  questions()
     .then(data => {
       fs.writeFile('./dist/README.md', generateMarkdown(data), err => {
         if (err) {
