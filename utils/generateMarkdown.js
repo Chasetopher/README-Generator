@@ -83,10 +83,6 @@ function generateMarkdown(data) {
 
     ${data.contribute}
 
-    ## Features
-
-    ${data.features}
-
     ## Tests
 
     ${data.test}

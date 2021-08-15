@@ -34,7 +34,7 @@ const questions = () => {
       },
       {
         type: 'input',
-        name: 'instructions',
+        name: 'installation',
         message: 'Provide installation instructions for the project: '
       },
       {
