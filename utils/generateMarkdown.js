@@ -20,7 +20,7 @@ function renderLicenseLink(license) {
     if (license === '') {
         return ''
     } else {
-        return 'https://choosealicense.com/licenses/${data.license.toLowerCase()}/'
+        return 'https://choosealicense.com/licenses/${license.toLowerCase()}/'
     }
 }
 
@@ -79,7 +79,8 @@ Email: ${data.email}
 
 ### ${data.license} ${renderLicenseBadge(data.license)}
 
-For more information about this license please visit ${renderLicenseLink(data.license)}.
+For more information about this license please visit:
+ ${renderLicenseLink(data.license)}.
 
 `;
 }
