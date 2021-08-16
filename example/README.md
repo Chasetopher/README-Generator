@@ -43,5 +43,6 @@ Email: email@email.com
 
 ### MIT [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-For more information about this license please visit https://choosealicense.com/licenses/${data.license.toLowerCase()}/.
+For more information about this license please visit:
+https://choosealicense.com/licenses/mit/.
 
