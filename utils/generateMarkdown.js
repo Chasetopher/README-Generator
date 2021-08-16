@@ -47,7 +47,6 @@ ${data.description}
 * [Installation](#installation)
 * [Usage](#usage)
 * [Contributing](#contributing)
-* [Features](#features)
 * [Tests](#tests)
 * [Questions](#questions)
 ${renderlicenseTOC()}
