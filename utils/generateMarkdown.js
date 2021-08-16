@@ -36,51 +36,51 @@ function renderlicenseTOC(license) {
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
     return `
-    # ${data.title} ${renderLicenseBadge(data.license)}
+# ${data.title} ${renderLicenseBadge(data.license)}
 
-    ## Description 
+## Description 
 
-    ${data.description}
+${data.description}
 
-    ## Table of Contents
+## Table of Contents
 
-    * [Installation](#installation)
-    * [Usage](#usage)
-    * [Contributing](#contributing)
-    * [Features](#features)
-    * [Tests](#tests)
-    * [Questions](#questions)
-    ${renderlicenseTOC()}
+* [Installation](#installation)
+* [Usage](#usage)
+* [Contributing](#contributing)
+* [Features](#features)
+* [Tests](#tests)
+* [Questions](#questions)
+${renderlicenseTOC()}
 
-    ## Installation
+## Installation
 
-    ${data.installation}
+${data.installation}
 
-    ## Usage 
+## Usage 
 
-    ${data.usage}
+${data.usage}
 
-    ## Contributing
+## Contributing
 
-    ${data.contribute}
+${data.contribute}
 
-    ## Tests
+## Tests
 
-    ${data.test}
+${data.test}
 
-    ## Questions
+## Questions
 
-    If you have any questions, you can check out my GitHub or email me directly.
+If you have any questions, you can check out my GitHub or email me directly.
 
-    GitHub: https://github.com/${data.github}
+GitHub: https://github.com/${data.github}
 
-    Email: ${data.email}
+Email: ${data.email}
 
-    ## License
+## License
 
-    ### ${data.license} ${renderLicenseBadge(data.license)}
+### ${data.license} ${renderLicenseBadge(data.license)}
 
-    For more information about this license please visit ${renderLicenseLink(data.license)}.
+For more information about this license please visit ${renderLicenseLink(data.license)}.
 
 `;
 }
