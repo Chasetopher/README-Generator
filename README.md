@@ -15,7 +15,6 @@ Node.js application to generate a README file by going through a list of prompts
 * [Features](#features)
 * [Tests](#tests)
 * [Questions](#questions)
-* [License](#license)
 
 ## Installation
 
